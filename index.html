@@ -43,7 +43,7 @@
             background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
             backdrop-filter: blur(10px); /* Blur effect for better readability */
         }
-         @media (min-width: 768px) {
+        @media (min-width: 768px) {
             #menu-toggle {
                 display: none;
             }
@@ -56,6 +56,20 @@
         }
         .mobile-menu.show {
             display: block;
+        }
+        .tech-icons {
+            display: flex;
+            overflow-x: auto;
+            gap: 1rem;
+            padding: 1rem;
+        }
+        .tech-icons img {
+            height: 60px;
+            width: auto;
+            transition: transform 0.3s;
+        }
+        .tech-icons img:hover {
+            transform: scale(1.2);
         }
     </style>
 </head>
@@ -101,6 +115,19 @@
         </div>
     </section>
 
+    <!-- Technology Icons Section -->
+    <section class="py-10 bg-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="tech-icons">
+                <img src="tech-icon1.png" alt="Technology 1">
+                <img src="tech-icon2.png" alt="Technology 2">
+                <img src="tech-icon3.png" alt="Technology 3">
+                <img src="tech-icon4.png" alt="Technology 4">
+                <img src="tech-icon5.png" alt="Technology 5">
+            </div>
+        </div>
+    </section>
+
     <!-- Upcoming Service Section -->
     <section class="py-20 bg-gray-100">
         <div class="container mx-auto px-4 text-center">
@@ -125,27 +152,31 @@
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-12 glow-on-hover">Our Services</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-lg animated-element">
+                <a href="web-design.html" class="block bg-white p-6 rounded-lg shadow-lg animated-element">
+                    <img src="web-design-icon.png" alt="Web Design" class="w-16 h-16 mx-auto mb-4">
                     <h3 class="text-2xl font-bold mb-2 glow-on-hover">Web Design</h3>
                     <p>We create visually stunning and user-friendly web designs.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg animated-element">
+                </a>
+                <a href="web-development.html" class="block bg-white p-6 rounded-lg shadow-lg animated-element">
+                    <img src="web-development-icon.png" alt="Web Development" class="w-16 h-16 mx-auto mb-4">
                     <h3 class="text-2xl font-bold mb-2 glow-on-hover">Web Development</h3>
                     <p>Our development ensures functionality and performance.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg animated-element">
+                </a>
+                <a href="ui-ux-design.html" class="block bg-white p-6 rounded-lg shadow-lg animated-element">
+                    <img src="ui-ux-icon.png" alt="UI/UX Design" class="w-16 h-16 mx-auto mb-4">
                     <h3 class="text-2xl font-bold mb-2 glow-on-hover">UI/UX Design</h3>
                     <p>Enhancing user satisfaction with intuitive interfaces.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg animated-element">
+                </a>
+                <a href="logo-design.html" class="block bg-white p-6 rounded-lg shadow-lg animated-element">
+                    <img src="logo-design-icon.png" alt="Logo Design" class="w-16 h-16 mx-auto mb-4">
                     <h3 class="text-2xl font-bold mb-2 glow-on-hover">Logo Design</h3>
-                    <p>Crafting unique logos that represent your brand identity.</p>
-                </div>
+                    <p>Creating memorable logos that define your brand identity.</p>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Mobile-Responsive Section -->
+      <!-- Mobile-Responsive Section -->
     <section class="py-20 bg-gray-200">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
@@ -190,59 +221,150 @@
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-6 glow-on-hover">About Us</h2>
-            <p class="text-xl mb-4 glow-on-hover">Core Blest is dedicated to providing top-notch web design, web development, UI/UX design, and logo design services. Our team is passionate about crafting seamless digital experiences that captivate and engage users.</p>
+    <!-- Case Studies/Portfolio Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 glow-on-hover">Our Portfolio</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg animated-element">
+                    <img src="https://source.unsplash.com/random/800x600" alt="Project 1" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <h3 class="text-2xl font-bold mb-2 glow-on-hover">Project 1</h3>
+                    <p>A brief description of the project.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg animated-element">
+                    <img src="https://source.unsplash.com/random/800x600" alt="Project 2" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <h3 class="text-2xl font-bold mb-2 glow-on-hover">Project 2</h3>
+                    <p>A brief description of the project.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg animated-element">
+                    <img src="https://source.unsplash.com/random/800x600" alt="Project 3" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <h3 class="text-2xl font-bold mb-2 glow-on-hover">Project 3</h3>
+                    <p>A brief description of the project.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg animated-element">
+                    <img src="https://source.unsplash.com/random/800x600" alt="Project 4" class="w-full h-48 object-cover rounded-t-lg mb-4">
+                    <h3 class="text-2xl font-bold mb-2 glow-on-hover">Project 4</h3>
+                    <p>A brief description of the project.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Us Section -->
+     <!-- Logo Design Principle Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row-reverse items-center">
+                <div class="md:w-1/2 p-6">
+                    <h2 class="text-4xl font-bold mb-6 glow-on-hover">Logo Design Principle Section</h2>
+                    <p class="text-xl mb-4 glow-on-hover">Simplicity: A memorable logo is often simple and uncluttered. <br> ersatility: Ensure the logo works well across different contexts (web, print, social media). <br> Uniqueness: Create a distinctive logo that stands out from competitors.</p>
+                </div>
+                <div class="md:w-1/2 p-6">
+                    <img src="https://source.unsplash.com/random/800x600" alt="Elegance and Quality" class="rounded-lg shadow-lg animated-element">
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Mulitilinual Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 p-6">
+                    <h2 class="text-4xl font-bold mb-6 glow-on-hover">Mulitilinual</h2>
+                    <p class="text-xl mb-4 glow-on-hover">Design websites to support multiple languages. Provide translated content, navigation, and user interfaces.</p>
+                </div>
+                <div class="md:w-1/2 p-6">
+                    <img src="https://source.unsplash.com/random/800x600" alt="Catchy Simplicity" class="rounded-lg shadow-lg animated-element">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials/Reviews Section -->
+    <section class="py-20 bg-gray-200">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 glow-on-hover">Client Testimonials</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg animated-element">
+                    <p class="text-xl mb-4 glow-on-hover">"Core Blest transformed our online presence. Highly recommend!"</p>
+                    <h4 class="text-lg font-bold glow-on-hover">- Client 1</h4>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg animated-element">
+                    <p class="text-xl mb-4 glow-on-hover">"Exceptional service and innovative solutions."</p>
+                    <h4 class="text-lg font-bold glow-on-hover">- Client 2</h4>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg animated-element">
+                    <p class="text-xl mb-4 glow-on-hover">"Professional and creative team. Great results!"</p>
+                    <h4 class="text-lg font-bold glow-on-hover">- Client 3</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 glow-on-hover">Frequently Asked Questions</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg animated-element">
+                    <h3 class="text-2xl font-bold mb-2 glow-on-hover">What services do you offer?</h3>
+                    <p>We offer web design, web development, UI/UX design, and logo design services.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg animated-element">
+                    <h3 class="text-2xl font-bold mb-2 glow-on-hover">How can we contact you?</h3>
+                    <p>You can reach us via the contact form on our website or through our chatbot.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg animated-element">
+                    <h3 class="text-2xl font-bold mb-2 glow-on-hover">What is your pricing?</h3>
+                    <p>Our pricing is project-based and varies depending on the scope of work.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg animated-element">
+                    <h3 class="text-2xl font-bold mb-2 glow-on-hover">Do you offer ongoing support?</h3>
+                    <p>Yes, we provide ongoing support and maintenance services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form with Chatbot Integration -->
     <section id="contact" class="py-20 bg-gray-200">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-6 glow-on-hover">Contact Us</h2>
-            <p class="text-xl mb-4 glow-on-hover">We'd love to hear from you! Whether you have a question about our services or want to discuss a project, our team is ready to assist you.</p>
-            <form class="w-full max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg animated-element">
-                <div class="mb-4">
-                    <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-                    <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Name">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 glow-on-hover">Contact Us</h2>
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <form action="#" method="POST">
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2 glow-on-hover">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2 glow-on-hover">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2 glow-on-hover">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded animated-element">Send Message</button>
+                    </div>
+                </form>
+            </div>
+            <div class="max-w-2xl mx-auto mt-12">
+                <div id="chatbot" class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <!-- Insert chatbot integration script here -->
                 </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                    <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Email">
-                </div>
-                <div class="mb-4">
-                    <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
-                    <textarea id="message" name="message" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="4" placeholder="Your Message"></textarea>
-                </div>
-                <div class="flex items-center justify-between">
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Send Message</button>
-                </div>
-            </form>
+            </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="bg-gray-800 text-white py-6">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2024 Core Blest. All rights reserved.</p>
-        </div>
+    <!-- Footer -->
+    <footer class="py-10 bg-gray-900 text-gray-200 text-center">
+        <p>&copy; 2024 Core Blest. All rights reserved.</p>
     </footer>
 
-    <!-- Spline.design and uiverse.io elements -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.6"></script>
-    <script src="https://cdn.spline.design/v1.0.0/spline.js"></script>
     <script>
-        // Add Spline.design or uiverse.io elements here
-    </script>
-    <script>
-        // Toggle mobile menu visibility
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('show');
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('show');
         });
     </script>
 </body>
