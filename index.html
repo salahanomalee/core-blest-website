@@ -43,6 +43,12 @@
             background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
             backdrop-filter: blur(10px); /* Blur effect for better readability */
         }
+        .mobile-menu {
+            display: none;
+        }
+        .mobile-menu.show {
+            display: block;
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
@@ -50,14 +56,27 @@
     <header class="fixed w-full top-0 left-0 z-50 transparent-header shadow">
         <div class="container mx-auto px-4 py-6 flex justify-between items-center">
             <img src="logo.png" alt="Core Blest Logo" class="tilted-logo"> <!-- Custom logo with tilt effect -->
-            <nav>
+            <nav class="hidden md:flex">
                 <a href="#services" class="text-lg mx-4 glow-on-hover">Services</a>
                 <a href="#about" class="text-lg mx-4 glow-on-hover">About</a>
                 <a href="#contact" class="text-lg mx-4 glow-on-hover">Contact</a>
             </nav>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-900 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="mobile-menu md:hidden">
+            <nav class="flex flex-col items-center py-4">
+                <a href="#services" class="text-lg my-2 glow-on-hover">Services</a>
+                <a href="#about" class="text-lg my-2 glow-on-hover">About</a>
+                <a href="#contact" class="text-lg my-2 glow-on-hover">Contact</a>
+            </nav>
         </div>
     </header>
-
 
     <!-- Hero Section with Video -->
     <section class="relative h-screen overflow-hidden">
@@ -67,27 +86,29 @@
         </video>
         <div class="container mx-auto px-4 flex items-center justify-center h-full">
             <div class="text-center text-white">
-                <h2 class="text-5xl font-bold mb-4 glow-on-hover" style="color;">Welcome to Core Blest</h2>
+                <h2 class="text-5xl font-bold mb-4 glow-on-hover">Welcome to Core Blest</h2>
                 <p class="text-2xl mb-6 glow-on-hover">Crafting seamless digital experiences that captivate and engage users.</p>
                 <a href="#services" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded animated-element">Discover More</a>
             </div>
         </div>
     </section>
 
-    <!-- Hero Section 
-    <section class="bg-cover bg-center h-screen text-white flex items-center" style="background-image: url('hero.jpg');">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-5xl font-bold mb-4 glow-on-hover">Welcome to Core Blest</h2>
-            <p class="text-2xl mb-6 glow-on-hover">Crafting seamless digital experiences that captivate and engage users.</p>
-            <a href="#services" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded animated-element">Discover More</a>
-        </div>
-    </section> -->
-
-     <!-- Upcoming Service Section -->
+    <!-- Upcoming Service Section -->
     <section class="py-20 bg-gray-100">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold mb-6 glow-on-hover">Upcoming Data Science Service</h2>
             <p class="text-xl mb-4 glow-on-hover">Stay tuned for AI-driven insights, predictive analytics, and data-driven solutions.</p>
+            <div class="flex flex-wrap justify-center items-center mt-8">
+                <div class="w-full md:w-1/3 p-4">
+                    <img src="https://source.unsplash.com/random/800x600" alt="Data Science" class="rounded-lg shadow-lg animated-element">
+                </div>
+                <div class="w-full md:w-1/3 p-4">
+                    <img src="https://source.unsplash.com/random/800x600" alt="AI Insights" class="rounded-lg shadow-lg animated-element">
+                </div>
+                <div class="w-full md:w-1/3 p-4">
+                    <img src="https://source.unsplash.com/random/800x600" alt="Predictive Analytics" class="rounded-lg shadow-lg animated-element">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -115,7 +136,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- Mobile-Responsive Section -->
     <section class="py-20 bg-gray-200">
@@ -207,6 +227,15 @@
     <script src="https://cdn.spline.design/v1.0.0/spline.js"></script>
     <script>
         // Add Spline.design or uiverse.io elements here
+    </script>
+    <script>
+        // Toggle mobile menu visibility
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('show');
+        });
     </script>
 </body>
 </html>
