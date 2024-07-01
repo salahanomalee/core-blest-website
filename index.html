@@ -5,83 +5,193 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Core Blest</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles for animations and interactivity */
+        .animated-element {
+            transition: all 0.3s ease-in-out;
+        }
+        .animated-element:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .glow-on-hover {
+            position: relative;
+            color: #333; /* Darker font color */
+        }
+        .glow-on-hover::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, #00f, #f0f);
+            z-index: -1;
+            filter: blur(5px);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .glow-on-hover:hover::before {
+            opacity: 1;
+        }
+        .tilted-logo {
+            transform: rotate(-10deg); /* Adjust the degree to tilt the logo */
+            height: 90px; /* Custom height for the logo */
+            width: auto;
+        }
+        .transparent-header {
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+            backdrop-filter: blur(10px); /* Blur effect for better readability */
+        }
+    </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
     <!-- Header Section -->
-    <header class="bg-white shadow">
+    <header class="fixed w-full top-0 left-0 z-50 transparent-header shadow">
         <div class="container mx-auto px-4 py-6 flex justify-between items-center">
-            <h1 class="text-3xl font-bold">Core Blest</h1>
+            <img src="logo.png" alt="Core Blest Logo" class="tilted-logo"> <!-- Custom logo with tilt effect -->
             <nav>
-                <a href="#services" class="text-lg mx-4">Services</a>
-                <a href="#about" class="text-lg mx-4">About</a>
-                <a href="#contact" class="text-lg mx-4">Contact</a>
+                <a href="#services" class="text-lg mx-4 glow-on-hover">Services</a>
+                <a href="#about" class="text-lg mx-4 glow-on-hover">About</a>
+                <a href="#contact" class="text-lg mx-4 glow-on-hover">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-cover bg-center h-screen text-white flex items-center" style="background-image: url('path_to_your_image.jpg');">
+
+    <!-- Hero Section with Video -->
+    <section class="relative h-screen overflow-hidden">
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
+            <source src="herovide.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="container mx-auto px-4 flex items-center justify-center h-full">
+            <div class="text-center text-white">
+                <h2 class="text-5xl font-bold mb-4 glow-on-hover" style="color;">Welcome to Core Blest</h2>
+                <p class="text-2xl mb-6 glow-on-hover">Crafting seamless digital experiences that captivate and engage users.</p>
+                <a href="#services" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded animated-element">Discover More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section 
+    <section class="bg-cover bg-center h-screen text-white flex items-center" style="background-image: url('hero.jpg');">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-5xl font-bold mb-4">Welcome to Core Blest</h2>
-            <p class="text-2xl mb-6">Crafting seamless digital experiences that captivate and engage users.</p>
-            <a href="#services" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Discover More</a>
+            <h2 class="text-5xl font-bold mb-4 glow-on-hover">Welcome to Core Blest</h2>
+            <p class="text-2xl mb-6 glow-on-hover">Crafting seamless digital experiences that captivate and engage users.</p>
+            <a href="#services" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded animated-element">Discover More</a>
+        </div>
+    </section> -->
+
+     <!-- Upcoming Service Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6 glow-on-hover">Upcoming Data Science Service</h2>
+            <p class="text-xl mb-4 glow-on-hover">Stay tuned for AI-driven insights, predictive analytics, and data-driven solutions.</p>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="py-20 bg-gray-200">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12">Our Services</h2>
+            <h2 class="text-4xl font-bold text-center mb-12 glow-on-hover">Our Services</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-2">Web Design</h3>
+                <div class="bg-white p-6 rounded-lg shadow-lg animated-element">
+                    <h3 class="text-2xl font-bold mb-2 glow-on-hover">Web Design</h3>
                     <p>We create visually stunning and user-friendly web designs.</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-2">Web Development</h3>
+                <div class="bg-white p-6 rounded-lg shadow-lg animated-element">
+                    <h3 class="text-2xl font-bold mb-2 glow-on-hover">Web Development</h3>
                     <p>Our development ensures functionality and performance.</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-2">UI/UX Design</h3>
+                <div class="bg-white p-6 rounded-lg shadow-lg animated-element">
+                    <h3 class="text-2xl font-bold mb-2 glow-on-hover">UI/UX Design</h3>
                     <p>Enhancing user satisfaction with intuitive interfaces.</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-2">Logo Design</h3>
+                <div class="bg-white p-6 rounded-lg shadow-lg animated-element">
+                    <h3 class="text-2xl font-bold mb-2 glow-on-hover">Logo Design</h3>
                     <p>Crafting unique logos that represent your brand identity.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Upcoming Service Section -->
-    <section class="py-20 bg-gray-100">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-6">Upcoming Data Science Service</h2>
-            <p class="text-xl mb-4">Stay tuned for AI-driven insights, predictive analytics, and data-driven solutions.</p>
-        </div>
-    </section>
 
     <!-- Mobile-Responsive Section -->
     <section class="py-20 bg-gray-200">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-6">Mobile-Responsive Excellence</h2>
-            <p class="text-xl mb-4">Seamlessly access our services wherever you are.</p>
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 p-6">
+                    <h2 class="text-4xl font-bold mb-6 glow-on-hover">Mobile-Responsive Excellence</h2>
+                    <p class="text-xl mb-4 glow-on-hover">Seamlessly access our services wherever you are.</p>
+                </div>
+                <div class="md:w-1/2 p-6">
+                    <img src="https://source.unsplash.com/random/800x600" alt="Mobile Responsive" class="rounded-lg shadow-lg animated-element">
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Elegance and Quality Section -->
     <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-6">Elegance and Quality</h2>
-            <p class="text-xl mb-4">Our designs are sleek, professional, and high-end. Expect nothing less than exceptional outcomes.</p>
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row-reverse items-center">
+                <div class="md:w-1/2 p-6">
+                    <h2 class="text-4xl font-bold mb-6 glow-on-hover">Elegance and Quality</h2>
+                    <p class="text-xl mb-4 glow-on-hover">Our designs are sleek, professional, and high-end. Expect nothing less than exceptional outcomes.</p>
+                </div>
+                <div class="md:w-1/2 p-6">
+                    <img src="https://source.unsplash.com/random/800x600" alt="Elegance and Quality" class="rounded-lg shadow-lg animated-element">
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Catchy Simplicity Section -->
     <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 p-6">
+                    <h2 class="text-4xl font-bold mb-6 glow-on-hover">Catchy Simplicity</h2>
+                    <p class="text-xl mb-4 glow-on-hover">Navigate effortlessly through our user-friendly interface.</p>
+                </div>
+                <div class="md:w-1/2 p-6">
+                    <img src="https://source.unsplash.com/random/800x600" alt="Catchy Simplicity" class="rounded-lg shadow-lg animated-element">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-white">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-6">Catchy Simplicity</h2>
-            <p class="text-xl mb-4">Navigate effortlessly through our user-friendly interface.</p>
+            <h2 class="text-4xl font-bold mb-6 glow-on-hover">About Us</h2>
+            <p class="text-xl mb-4 glow-on-hover">Core Blest is dedicated to providing top-notch web design, web development, UI/UX design, and logo design services. Our team is passionate about crafting seamless digital experiences that captivate and engage users.</p>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-20 bg-gray-200">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6 glow-on-hover">Contact Us</h2>
+            <p class="text-xl mb-4 glow-on-hover">We'd love to hear from you! Whether you have a question about our services or want to discuss a project, our team is ready to assist you.</p>
+            <form class="w-full max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg animated-element">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                    <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Name">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Email">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                    <textarea id="message" name="message" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="4" placeholder="Your Message"></textarea>
+                </div>
+                <div class="flex items-center justify-between">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Send Message</button>
+                </div>
+            </form>
         </div>
     </section>
 
@@ -91,5 +201,12 @@
             <p>&copy; 2024 Core Blest. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Spline.design and uiverse.io elements -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.6"></script>
+    <script src="https://cdn.spline.design/v1.0.0/spline.js"></script>
+    <script>
+        // Add Spline.design or uiverse.io elements here
+    </script>
 </body>
 </html>
