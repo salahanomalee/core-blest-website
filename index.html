@@ -77,6 +77,97 @@
         .interactive-element:hover {
             transform: scale(1.1) rotate(3deg);
         }
+
+
+
+         .glow-text {
+            position: relative;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+        .object-cover {
+            object-fit: cover;
+        }
+
+
+
+        .spinner {
+          background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
+          width: 100px;
+          height: 100px;
+          animation: spinning82341 1.7s linear infinite;
+          text-align: center;
+          border-radius: 50px;
+          filter: blur(1px);
+          box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+        }
+
+        .spinner1 {
+          background-color: rgb(36, 36, 36);
+          width: 100px;
+          height: 100px;
+          border-radius: 50px;
+          filter: blur(10px);
+        }
+
+        @keyframes spinning82341 {
+          to {
+            transform: rotate(360deg);
+          }
+        }
+
+
+
+
+
+        button {
+         --glow-color: rgb(217, 176, 255);
+         --glow-spread-color: rgba(191, 123, 255, 0.781);
+         --enhanced-glow-color: rgb(231, 206, 255);
+         --btn-color: rgb(100, 61, 136);
+         border: .25em solid var(--glow-color);
+         padding: 1em 3em;
+         color: var(--glow-color);
+         font-size: 15px;
+         font-weight: bold;
+         background-color: var(--btn-color);
+         border-radius: 1em;
+         outline: none;
+         box-shadow: 0 0 1em .25em var(--glow-color),
+                0 0 4em 1em var(--glow-spread-color),
+                inset 0 0 .75em .25em var(--glow-color);
+         text-shadow: 0 0 .5em var(--glow-color);
+         position: relative;
+         transition: all 0.3s;
+        }
+
+        button::after {
+         pointer-events: none;
+         content: "";
+         position: absolute;
+         top: 120%;
+         left: 0;
+         height: 100%;
+         width: 100%;
+         background-color: var(--glow-spread-color);
+         filter: blur(2em);
+         opacity: .7;
+         transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+        }
+
+        button:hover {
+         color: var(--btn-color);
+         background-color: var(--glow-color);
+         box-shadow: 0 0 1em .25em var(--glow-color),
+                0 0 4em 2em var(--glow-spread-color),
+                inset 0 0 .75em .25em var(--glow-color);
+        }
+
+        button:active {
+         box-shadow: 0 0 0.6em .25em var(--glow-color),
+                0 0 2.5em 2em var(--glow-spread-color),
+                inset 0 0 .5em .25em var(--glow-color);
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
@@ -101,23 +192,27 @@
         <div id="mobile-menu" class="mobile-menu md:hidden">
             <nav class="flex flex-col items-center py-4">
                 <a href="#services" class="text-lg my-2 glow-on-hover">Services</a>
+                <a href="#faq" class="text-lg my-2 glow-on-hover">FAQ</a>
                 <a href="#about" class="text-lg my-2 glow-on-hover">About</a>
                 <a href="#contact" class="text-lg my-2 glow-on-hover">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section with Video -->
+   <!-- Hero Section with Video -->
     <section class="relative h-screen overflow-hidden">
         <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
             <source src="herovide.mp4" type="video/mp4">
+            <!-- Fallback text if video is not supported -->
             Your browser does not support the video tag.
         </video>
-        <div class="container mx-auto px-4 flex items-center justify-center h-full">
+        <!-- Fallback image for browsers that can't run the video -->
+        <img src="heo.jpg" alt="Fallback Image" class="absolute inset-0 w-full h-full object-cover">
+        <div class="container mx-auto px-4 flex items-center justify-center h-full relative">
             <div class="text-center text-white">
-                <h2 class="text-5xl font-bold mb-4 glow-on-hover">Welcome to Core Blest</h2>
-                <p class="text-2xl mb-6 glow-on-hover">Crafting seamless digital experiences that captivate and engage users.</p>
-                <a href="#services" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded animated-element">Discover More</a>
+                <h1 class="text-6xl font-bold mb-4 glow-text">Welcome to Core Blest</h1>
+                <p class="text-2xl mb-6 glow-text">Crafting seamless digital experiences that captivate and engage users.</p>
+                <button> Discover More </button>
             </div>
         </div>
     </section>
@@ -142,7 +237,9 @@
             <p class="text-xl mb-4 glow-on-hover">Stay tuned for AI-driven insights, predictive analytics, and data-driven solutions.</p>
             <div class="flex flex-wrap justify-center items-center mt-8">
                 <div class="w-full md:w-1/3 p-4">
-                    <img src="https://source.unsplash.com/random/800x600" alt="Data Science" class="rounded-lg shadow-lg animated-element">
+                    <div class="spinner tems-center">
+                        <div class="spinner1"></div>
+                    </div>
                 </div>
                 <div class="w-full md:w-1/3 p-4">
                     <img src="ainsight.jpg" alt="AI Insights" class="rounded-lg shadow-lg animated-element">
